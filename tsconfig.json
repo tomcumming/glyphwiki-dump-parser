@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "module": "commonjs",
+    "target": "es2015",
+    "outDir": "dist",
+    "declaration": true
+  },
+  "files": [
+    "typings/node/node.d.ts",
+    "src/glyphwiki-dump-parser.ts"
+  ]
+}
