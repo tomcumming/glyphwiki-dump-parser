@@ -1,6 +1,6 @@
 const gdp = require('../lib/glyphwiki-dump-parser');
 
-var result = gdp.GlyphWikiDumpParser.parseFile('test/test_dump.txt', false);
+var result = gdp.parseFile('test/test_dump.txt', false);
 
 var tests = [
   result.size === 500,
