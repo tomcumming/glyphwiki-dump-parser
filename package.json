@@ -1,6 +1,6 @@
 {
   "name": "glyphwiki-dump-parser",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Parse database dump from the glyph wiki project",
   "main": "lib/glyphwiki-dump-parser.js",
   "directories": {
