@@ -4,11 +4,11 @@
     "noImplicitReturns": true,
     "module": "commonjs",
     "target": "es2015",
-    "outDir": "dist",
+    "outDir": "lib",
     "declaration": true
   },
   "files": [
-    "typings/node/node.d.ts",
+    "typings/main.d.ts",
     "src/glyphwiki-dump-parser.ts"
   ]
 }

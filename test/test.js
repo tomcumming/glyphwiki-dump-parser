@@ -1,6 +1,6 @@
-import gdp = require('../dist/glyphwiki-dump-parser');
+const gdp = require('../lib/glyphwiki-dump-parser');
 
-var result = gdp.GlyphWikiDumpParser.parseFile('test_dump.txt', false);
+var result = gdp.GlyphWikiDumpParser.parseFile('test/test_dump.txt', false);
 
 var tests = [
   result.size === 500,
@@ -15,6 +15,4 @@ tests.forEach((value, index) => {
 
 if(tests.filter(v => !v).length > 0)
   process.exit(1);
-else
-  console.log('PASS');
 
