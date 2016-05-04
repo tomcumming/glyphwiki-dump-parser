@@ -7,14 +7,14 @@ export var definitionRegex: RegExp = /\s*(\S+)\s*\|\s*(\S+)\s*\|\s*(\S+)/;
 
 // Throws an exception if the file could not be read
 // ignoreErrors will ignore parse errors
-export function parseFile(filename: string, ignoreErrors = false): Map<string, Definition> {
+export function parseFile(filename: string): Map<string, Definition> {
   var fs = require('fs');
   var contents = fs.readFileSync(filename, 'utf8');
 
-  return parseString(contents, ignoreErrors);
+  return parseString(contents);
 }
 
-export function parseString(dump: string, ignoreErrors = false): Map<string, Definition> {
+export function parseString(dump: string): Map<string, Definition> {
   var lines = dump.split('\n');
 
   var ret = new Map<string, Definition>();
@@ -28,8 +28,7 @@ export function parseString(dump: string, ignoreErrors = false): Map<string, Def
 
       var match = definitionRegex.exec(line);
       if (match === null) {
-        if(!ignoreErrors)
-          throw new Error('Failed to parse line:' + (index + 1));
+        process.stderr.write(`Failed to parse line ${index + 1}: ${line}`);
       } else {
         ret.set(match[1], { related: match[2], code: match[3] });
       } 
