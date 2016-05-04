@@ -28,7 +28,7 @@ export function parseString(dump: string): Map<string, Definition> {
 
       var match = definitionRegex.exec(line);
       if (match === null) {
-        process.stderr.write(`Failed to parse line ${index + 1}: ${line}`);
+        process.stderr.write(`Failed to parse line ${index + 1}: ${line}\n`);
       } else {
         ret.set(match[1], { related: match[2], code: match[3] });
       } 
